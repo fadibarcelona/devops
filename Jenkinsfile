@@ -19,11 +19,11 @@ pipeline {
             }
             }	        
 		
-		stage('Removing Old container ') {
+		stage('Checking Existing Container Status ') {
             agent { label 'master' }
                 steps { 
-                    dir ('/root/docker/devops') {
-                    sh "docker stop http && docker rm http"
+                    dir ('/root/docker/') {
+                    sh "./checkcontainer.sh"
                     
                     }
             }
