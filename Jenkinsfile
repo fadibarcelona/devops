@@ -20,7 +20,7 @@ pipeline {
             }	        
 		
 		stage('Removing Old container ') {
-            agent { label 'wcsv9' }
+            agent { label 'master' }
                 steps { 
                     dir ('/root/docker/devops') {
                     sh "docker stop http && docker rm http"
@@ -30,7 +30,7 @@ pipeline {
             }
             
             stage('Starting New Container ') {
-            agent { label 'wcsv9' }
+            agent { label 'master' }
                 steps { 
                     dir ('/root/docker/devops') {
                     sh "docker run -d -p 8081:80 ubuntu:$tag http "
