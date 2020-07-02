@@ -33,7 +33,7 @@ pipeline {
             agent { label 'master' }
                 steps { 
                     dir ('/root/docker/devops') {
-                    sh "docker run -d --name http -p 8081:80 ubuntu:$tag http "
+                    sh "docker run -d --name http -p 8081:80 ubuntu:$tag "
                     
                     }
             }
