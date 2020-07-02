@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent master
         stages {
         stage('Checking out Code from Git') {
             agent { label 'master' }
